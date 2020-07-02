@@ -74,13 +74,11 @@ const store = new Vuex.Store({
           i = index;
         }
       }, state.cart);
-      console.log(state.cart.splice(i, 1));
-      console.log(state.cart);
+      state.cart.splice(i, 1);
     },
     CHANGE_QUANTITY(state, obj) {
       let id = obj.obj.id;
       let qt = obj.obj.quantity;
-      console.log(qt, id);
       state.cart.forEach((product, index) => {
         if (product.id === id) {
           state.cart[index] = {
